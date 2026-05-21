@@ -18,16 +18,16 @@ export default function CategoriesScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
-      <Header 
+      <Header
         title="CATEGORIES"
-        onMenuPress={() => navigation.goBack()} 
+        onMenuPress={() => navigation.goBack()}
       />
 
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         <View style={styles.grid}>
           {categories.map((item) => (
-            <TouchableOpacity 
-              key={item.id} 
+            <TouchableOpacity
+              key={item.id}
               style={styles.card}
               onPress={() => navigation.navigate('CategoryProducts', { categoryTitle: item.title })}
             >
@@ -64,8 +64,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   card: {
-    width: '45%',
-    backgroundColor: '#fff',
+    width: '48%',
+    backgroundColor: '#FFF2CC', // same as home product cards
     borderRadius: 25,
     marginBottom: 15,
     overflow: 'hidden',
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     width: '100%',
-    height: 180,
+    height: 220,
     position: 'relative',
   },
   image: {

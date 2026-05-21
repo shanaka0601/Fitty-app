@@ -8,6 +8,7 @@ import CartScreen from '../screens/CartScreen';
 import FavoritesScreen from '../screens/FavoritesScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import ComingSoonScreen from '../screens/ComingSoonScreen';
 import PaymentMethodScreen from '../screens/PaymentMethodScreen';
 import AlertsScreen from '../screens/AlertsScreen';
 import AddCardScreen from '../screens/AddCardScreen';
@@ -15,7 +16,7 @@ import BuyNowScreen from '../screens/BuyNowScreen';
 import SaleScreen from '../screens/SaleScreen';
 import PaymentDetailScreen from '../screens/PaymentDetailScreen';
 
-import ComingSoonScreen from '../screens/ComingSoonScreen';
+import ProceedScreen from '../screens/ProceedScreen';
 import CategoryProductsScreen from '../screens/CategoryProductsScreen';
 import MyOrdersScreen from '../screens/MyOrdersScreen';
 import ShippingAddressScreen from '../screens/ShippingAddressScreen';
@@ -43,6 +44,7 @@ function HomeStack() {
       <Stack.Screen name="AddCard" component={AddCardScreen} />
       <Stack.Screen name="PaymentDetail" component={PaymentDetailScreen} />
       <Stack.Screen name="BuyNow" component={BuyNowScreen} />
+      <Stack.Screen name="Proceed" component={ProceedScreen} />
     </Stack.Navigator>
   );
 }

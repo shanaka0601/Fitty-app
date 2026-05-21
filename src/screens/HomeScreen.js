@@ -34,30 +34,27 @@ export default function HomeScreen({ navigation }) {
             style={styles.bannerImage}
           />
           <View style={styles.bannerContent}>
-            <Text style={styles.bannerText}>Get Your special</Text>
-            <Text style={styles.bannerText}>
-              sale up to <Text style={styles.bannerHighlight}>50%</Text>
-            </Text>
-            <TouchableOpacity
-              style={styles.shopNowBtn}
-              onPress={() => navigation.navigate('Sale')}
-            >
-              <Text style={styles.shopNowText}>Shop Now</Text>
-            </TouchableOpacity>
-          </View>
+          <Text style={styles.bannerText}>GET YOUR SPECIAL SALE UP TO <Text style={styles.bannerHighlight}>50%</Text></Text>
+          <TouchableOpacity
+            style={styles.shopNowBtn}
+            onPress={() => navigation.navigate('Sale')}
+          >
+            <Text style={styles.shopNowText}>Shop Now</Text>
+          </TouchableOpacity>
+        </View>
         </View>
 
         {/* Product Grid */}
         <View style={styles.grid}>
           {products.map((item) => (
             <ProductCard
-                key={item.id}
-                title={item.title}
-                price={item.price}
-                image={item.image}
-                onPress={() => navigation.navigate('ProductDetails', { product: item })}
-                onBuyNow={() => navigation.navigate('BuyNow', { product: item })}
-              />
+              key={item.id}
+              title={item.title}
+              price={item.price}
+              image={item.image}
+              onPress={() => navigation.navigate('ProductDetails', { product: item })}
+              onBuyNow={() => navigation.navigate('BuyNow', { product: item })}
+            />
           ))}
         </View>
       </ScrollView>
@@ -71,7 +68,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FDFBF0',
   },
   scrollContent: {
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
     paddingBottom: 20,
   },
   banner: {
@@ -91,18 +88,20 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     justifyContent: 'center',
+    alignItems: 'center',
   },
   bannerText: {
     fontSize: 22,
-    color: '#000',
-    fontWeight: '400',
+    color: '#FFF',
+    fontWeight: '800',
+    textAlign: 'center',
   },
   bannerHighlight: {
     fontWeight: '900',
   },
   shopNowBtn: {
     backgroundColor: '#000',
-    alignSelf: 'flex-start',
+    alignSelf: 'center',
     paddingHorizontal: 20,
     paddingVertical: 8,
     borderRadius: 20,
@@ -116,6 +115,6 @@ const styles = StyleSheet.create({
   grid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
   }
 });

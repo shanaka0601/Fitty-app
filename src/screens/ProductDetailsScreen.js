@@ -82,7 +82,7 @@ const ProductDetailsScreen = ({ route }) => {
             <Text style={styles.addToCartText}>Add to Cart</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.buyNowButton} onPress={() => navigation.navigate('BuyNow', { product })}>
+          <TouchableOpacity style={styles.buyNowButton} onPress={() => navigation.navigate('Proceed', { product })}>
             <Text style={styles.buyNowText}>Buy Now</Text>
           </TouchableOpacity>
         </View>

@@ -19,9 +19,6 @@ export default function ProductCard({
       <TouchableOpacity style={styles.favoriteBtn} onPress={onToggleFavorite}>
         <Ionicons name="heart" size={24} color={isFavorite ? 'red' : 'white'} />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.cartBtn} onPress={onAddToCart}>
-        <Ionicons name="cart" size={24} color="white" />
-      </TouchableOpacity>
 
       <View style={styles.info}>
         <Text style={styles.title} numberOfLines={1}>{title}</Text>
@@ -35,7 +32,7 @@ const styles = StyleSheet.create({
   card: {
     width: '48%',
     marginBottom: 20,
-    backgroundColor: '#FFF2CC',
+    backgroundColor: '#FFF',
   },
   image: {
     width: '100%',
@@ -54,7 +51,8 @@ const styles = StyleSheet.create({
     bottom: 10,
     right: 10,
     padding: 5,
-    backgroundColor: '#000',
+    // background removed for cleaner white cart icon
+    // backgroundColor: '#000',
     borderRadius: 12,
   },
   buyNowBtn: {
@@ -66,7 +64,9 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
   info: {
-    paddingTop: 10,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingHorizontal: 5,
   },
   title: {
@@ -74,9 +74,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#000',
     marginBottom: 2,
+    textAlign: 'center',
   },
   price: {
     fontSize: 14,
     color: '#000',
+    textAlign: 'center',
   },
 });
