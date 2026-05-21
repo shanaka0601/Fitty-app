@@ -78,8 +78,12 @@ const ProductDetailsScreen = ({ route }) => {
             </View>
           </View>
 
-          <TouchableOpacity style={styles.addToCartButton}>
+          <TouchableOpacity style={styles.addToCartButton} onPress={() => {/* TODO: add to cart logic */}}>
             <Text style={styles.addToCartText}>Add to Cart</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.buyNowButton} onPress={() => navigation.navigate('BuyNow', { product })}>
+            <Text style={styles.buyNowText}>Buy Now</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -180,7 +184,7 @@ const styles = StyleSheet.create({
     color: '#000',
   },
   addToCartButton: {
-    backgroundColor: '#FFDD67',
+    backgroundColor: '#FF9500', // changed from yellow to orange
     paddingVertical: 20,
     borderRadius: 20,
     alignItems: 'center',
@@ -191,8 +195,23 @@ const styles = StyleSheet.create({
   addToCartText: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#000',
+    color: '#FFF', // white text for contrast
   },
+  buyNowButton: {
+    backgroundColor: '#000', // black button
+    paddingVertical: 20,
+    borderRadius: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 20,
+    elevation: 5,
+  },
+  buyNowText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#FFF', // white text
+  },
+
 });
 
 export default ProductDetailsScreen;

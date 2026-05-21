@@ -11,8 +11,10 @@ import SettingsScreen from '../screens/SettingsScreen';
 import PaymentMethodScreen from '../screens/PaymentMethodScreen';
 import AlertsScreen from '../screens/AlertsScreen';
 import AddCardScreen from '../screens/AddCardScreen';
-import PaymentDetailScreen from '../screens/PaymentDetailScreen';
+import BuyNowScreen from '../screens/BuyNowScreen';
 import SaleScreen from '../screens/SaleScreen';
+import PaymentDetailScreen from '../screens/PaymentDetailScreen';
+
 import ComingSoonScreen from '../screens/ComingSoonScreen';
 import CategoryProductsScreen from '../screens/CategoryProductsScreen';
 import MyOrdersScreen from '../screens/MyOrdersScreen';
@@ -40,6 +42,7 @@ function HomeStack() {
       <Stack.Screen name="PaymentMethod" component={PaymentMethodScreen} />
       <Stack.Screen name="AddCard" component={AddCardScreen} />
       <Stack.Screen name="PaymentDetail" component={PaymentDetailScreen} />
+      <Stack.Screen name="BuyNow" component={BuyNowScreen} />
     </Stack.Navigator>
   );
 }

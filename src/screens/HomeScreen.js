@@ -51,12 +51,13 @@ export default function HomeScreen({ navigation }) {
         <View style={styles.grid}>
           {products.map((item) => (
             <ProductCard
-              key={item.id}
-              title={item.title}
-              price={item.price}
-              image={item.image}
-              onPress={() => navigation.navigate('ProductDetails', { product: item })}
-            />
+                key={item.id}
+                title={item.title}
+                price={item.price}
+                image={item.image}
+                onPress={() => navigation.navigate('ProductDetails', { product: item })}
+                onBuyNow={() => navigation.navigate('BuyNow', { product: item })}
+              />
           ))}
         </View>
       </ScrollView>
