@@ -11,14 +11,14 @@ const categoryData = {
   ],
   'Men': [
     { id: 'm1', title: 'White long sleeved shirt', price: '$58.25', image: require('../assets/images/men category.png'), description: 'Classic white long sleeved shirt for a clean, sophisticated look.' },
-    { id: 'm2', title: 'Black Casual Shirt', price: '$58.25', image: require('../assets/images/men category.png'), description: 'Versatile black shirt, perfect for casual or formal wear.' },
+    { id: 'm2', title: 'Black Casual Shirt', price: '$58.25', image: require('../assets/images/Black Shirt.png'), description: 'Versatile black shirt, perfect for casual or formal wear.' },
   ],
   'Sarees': [
-    { id: 's1', title: 'Black Silk Saree', price: '$120.00', image: require('../assets/images/saree category.png'), description: 'Stunning black silk saree with intricate gold border work.' },
+    { id: 's1', title: 'Black Silk Saree', price: '$120.00', image: require('../assets/images/black silk saree.png'), description: 'Stunning black silk saree with intricate gold border work.' },
     { id: 's2', title: 'Traditional Cotton Saree', price: '$85.00', image: require('../assets/images/saree category.png') },
   ],
   'Shoes': [
-    { id: 'sh1', title: 'Red Sport Sneakers', price: '$45.00', image: require('../assets/images/shoes category.png'), description: 'Comfortable and stylish red sneakers for active lifestyles.' },
+    { id: 'sh1', title: 'Sport Sneakers', price: '$45.00', image: require('../assets/images/shoes category.png'), description: 'Comfortable and stylish red sneakers for active lifestyles.' },
   ],
   'Accessories': [
     { id: 'a1', title: 'Premium Leather Bag', price: '$125.00', image: require('../assets/images/accessories category.png'), description: 'High-quality leather handbag with gold-tone hardware.' },
@@ -45,7 +45,7 @@ const CategoryProductsScreen = ({ route, navigation }) => {
 
         <View style={styles.grid}>
           {products.map((item) => (
-            <ProductCard 
+            <ProductCard
               key={item.id}
               title={item.title}
               price={item.price}

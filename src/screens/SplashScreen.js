@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { StyleSheet, View, Text, Platform } from 'react-native';
+import { StyleSheet, View, Image, Platform } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 export default function SplashScreen({ navigation }) {
@@ -14,7 +14,11 @@ export default function SplashScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
-      <Text style={styles.logo}>Fitty</Text>
+      <Image
+        source={require('../assets/images/splash page.png')}
+        style={styles.image}
+        resizeMode="cover"
+      />
     </View>
   );
 }
@@ -26,11 +30,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  logo: {
-    fontSize: 56,
-    fontWeight: 'bold',
-    color: '#000',
-    letterSpacing: 2,
-    fontFamily: Platform.OS === 'ios' ? 'Georgia' : 'serif',
+  image: {
+    width: '100%',
+    height: '100%',
   },
 });
