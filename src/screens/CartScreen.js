@@ -1,62 +1,101 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, ScrollView, Image, TouchableOpacity, Platform, StatusBar as RNStatusBar } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
 import Header from '../components/Header';
 
-const cartItems = [
-  { id: '1', title: 'Light Blue Dress', price: '$50.25', size: 'M', qty: 1, image: require('../assets/images/blue frock detail.png') },
-  { id: '2', title: 'Red Long Dress', price: '$65.25', size: 'S', qty: 1, image: require('../assets/images/Red frock.png') },
-];
-
 export default function CartScreen({ navigation }) {
+  const [items, setItems] = useState([
+    { id: '1', title: 'Light Blue Dress', price: 50.25, size: 'M', qty: 1, image: require('../assets/images/blue frock detail.png') },
+    { id: '2', title: 'Red Long Dress', price: 65.25, size: 'S', qty: 1, image: require('../assets/images/Red frock.png') },
+  ]);
+
+  const handleIncrease = (id) => {
+    setItems(prevItems =>
+      prevItems.map(item =>
+        item.id === id ? { ...item, qty: item.qty + 1 } : item
+      )
+    );
+  };
+
+  const handleDecrease = (id) => {
+    setItems(prevItems =>
+      prevItems.map(item => {
+        if (item.id === id) {
+          const newQty = item.qty - 1;
+          return newQty > 0 ? { ...item, qty: newQty } : null;
+        }
+        return item;
+      }).filter(Boolean)
+    );
+  };
+
+  const shipping = 5.00;
+  const subtotal = items.reduce((sum, item) => sum + (item.price * item.qty), 0);
+  const total = subtotal > 0 ? subtotal + shipping : 0;
+
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
       <Header title="My Cart" showBack={true} showCart={false} />
 
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-        {cartItems.map((item) => (
-          <View key={item.id} style={styles.cartItem}>
-            <Image source={item.image} style={styles.itemImage} />
-            <View style={styles.itemDetails}>
-              <Text style={styles.itemTitle}>{item.title}</Text>
-              <Text style={styles.itemSize}>Size: {item.size}</Text>
-              <Text style={styles.itemPrice}>{item.price}</Text>
-            </View>
-            <View style={styles.qtyContainer}>
-              <TouchableOpacity style={styles.qtyBtn}>
-                <Ionicons name="remove" size={16} color="black" />
-              </TouchableOpacity>
-              <Text style={styles.qtyText}>{item.qty}</Text>
-              <TouchableOpacity style={styles.qtyBtn}>
-                <Ionicons name="add" size={16} color="black" />
-              </TouchableOpacity>
-            </View>
+        {items.length === 0 ? (
+          <View style={styles.emptyContainer}>
+            <Ionicons name="bag-handle-outline" size={80} color="#CCC" style={{ marginBottom: 20 }} />
+            <Text style={styles.emptyText}>Your cart is empty</Text>
+            <TouchableOpacity 
+              style={styles.shopBtn} 
+              onPress={() => navigation.navigate('Main')}
+            >
+              <Text style={styles.shopBtnText}>Continue Shopping</Text>
+            </TouchableOpacity>
           </View>
-        ))}
+        ) : (
+          <>
+            {items.map((item) => (
+              <View key={item.id} style={styles.cartItem}>
+                <Image source={item.image} style={styles.itemImage} />
+                <View style={styles.itemDetails}>
+                  <Text style={styles.itemTitle}>{item.title}</Text>
+                  <Text style={styles.itemSize}>Size: {item.size}</Text>
+                  <Text style={styles.itemPrice}>${item.price.toFixed(2)}</Text>
+                </View>
+                <View style={styles.qtyContainer}>
+                  <TouchableOpacity style={styles.qtyBtn} onPress={() => handleDecrease(item.id)}>
+                    <Ionicons name="remove" size={16} color="black" />
+                  </TouchableOpacity>
+                  <Text style={styles.qtyText}>{item.qty}</Text>
+                  <TouchableOpacity style={styles.qtyBtn} onPress={() => handleIncrease(item.id)}>
+                    <Ionicons name="add" size={16} color="black" />
+                  </TouchableOpacity>
+                </View>
+              </View>
+            ))}
 
-        <View style={styles.totalSection}>
-          <View style={styles.totalRow}>
-            <Text style={styles.totalLabel}>Subtotal</Text>
-            <Text style={styles.totalValue}>$115.50</Text>
-          </View>
-          <View style={styles.totalRow}>
-            <Text style={styles.totalLabel}>Shipping</Text>
-            <Text style={styles.totalValue}>$5.00</Text>
-          </View>
-          <View style={[styles.totalRow, styles.grandTotalRow]}>
-            <Text style={styles.grandTotalLabel}>Total</Text>
-            <Text style={styles.grandTotalValue}>$120.50</Text>
-          </View>
-        </View>
+            <View style={styles.totalSection}>
+              <View style={styles.totalRow}>
+                <Text style={styles.totalLabel}>Subtotal</Text>
+                <Text style={styles.totalValue}>${subtotal.toFixed(2)}</Text>
+              </View>
+              <View style={styles.totalRow}>
+                <Text style={styles.totalLabel}>Shipping</Text>
+                <Text style={styles.totalValue}>${shipping.toFixed(2)}</Text>
+              </View>
+              <View style={[styles.totalRow, styles.grandTotalRow]}>
+                <Text style={styles.grandTotalLabel}>Total</Text>
+                <Text style={styles.grandTotalValue}>${total.toFixed(2)}</Text>
+              </View>
+            </View>
 
-        <TouchableOpacity 
-          style={styles.checkoutBtn}
-          onPress={() => navigation.navigate('PaymentMethod')}
-        >
-          <Text style={styles.checkoutText}>Proceed to Checkout</Text>
-        </TouchableOpacity>
+            <TouchableOpacity 
+              style={styles.checkoutBtn}
+              onPress={() => navigation.navigate('PaymentMethod')}
+            >
+              <Text style={styles.checkoutText}>Proceed to Checkout</Text>
+            </TouchableOpacity>
+          </>
+        )}
       </ScrollView>
     </View>
   );
@@ -177,5 +216,28 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: '#fff',
+  },
+  emptyContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 80,
+  },
+  emptyText: {
+    fontSize: 18,
+    color: '#888',
+    fontWeight: '500',
+    marginBottom: 25,
+  },
+  shopBtn: {
+    backgroundColor: '#000',
+    paddingHorizontal: 25,
+    paddingVertical: 12,
+    borderRadius: 25,
+  },
+  shopBtnText: {
+    color: '#fff',
+    fontSize: 15,
+    fontWeight: 'bold',
   }
 });

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, ScrollView, Alert } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, TouchableOpacity, ScrollView, Alert, Image } from 'react-native';
 import { BlurView } from 'expo-blur';
 import { Ionicons, FontAwesome } from '@expo/vector-icons';
 import CustomInput from '../components/CustomInput';
@@ -22,8 +22,8 @@ export default function LoginScreen({ navigation }) {
   };
 
   return (
-    <ImageBackground 
-      source={require('../assets/images/welcome.png')} 
+    <ImageBackground
+      source={require('../assets/images/welcome.png')}
       style={styles.background}
       resizeMode="cover"
     >
@@ -39,18 +39,18 @@ export default function LoginScreen({ navigation }) {
       <View style={styles.bottomContainer}>
         <BlurView intensity={50} tint="light" style={styles.blurContainer}>
           <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-            
+
             <View style={styles.form}>
-              <CustomInput 
-                label="Email Address" 
-                placeholder="Enter email address" 
+              <CustomInput
+                label="Email Address"
+                placeholder="Enter email address"
                 value={email}
                 onChangeText={setEmail}
               />
-              <CustomInput 
-                label="Password" 
-                placeholder="Enter strong password" 
-                secureTextEntry 
+              <CustomInput
+                label="Password"
+                placeholder="Enter strong password"
+                secureTextEntry
                 value={password}
                 onChangeText={setPassword}
               />
@@ -68,23 +68,31 @@ export default function LoginScreen({ navigation }) {
                 <View style={styles.divider} />
               </View>
 
-              <TouchableOpacity 
-                style={styles.socialBtn} 
-                onPress={() => navigation.navigate('SocialLogin', { platform: 'Facebook' })}
-              >
-                <FontAwesome name="facebook" size={20} color="#1877F2" style={styles.socialIcon} />
-                <Text style={styles.socialBtnText}>Log in with Facebook</Text>
-              </TouchableOpacity>
+              <View style={styles.socialRow}>
+                <TouchableOpacity
+                  style={styles.facebookBtn}
+                  onPress={() => navigation.navigate('SocialLogin', { platform: 'Facebook' })}
+                  activeOpacity={0.85}
+                >
+                  <Image 
+                    source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/512px-Facebook_Logo_%282019%29.png' }} 
+                    style={styles.socialImageLogo} 
+                  />
+                  <Text style={styles.facebookBtnText}>Facebook</Text>
+                </TouchableOpacity>
 
-              <TouchableOpacity 
-                style={styles.socialBtn}
-                onPress={() => navigation.navigate('SocialLogin', { platform: 'Google' })}
-              >
-                <View style={styles.googleIconPlaceholder}>
-                  <Text style={{color: '#4285F4', fontWeight: 'bold', fontSize: 18}}>G</Text>
-                </View>
-                <Text style={styles.socialBtnText}>Log in with Google</Text>
-              </TouchableOpacity>
+                <TouchableOpacity
+                  style={styles.googleBtn}
+                  onPress={() => navigation.navigate('SocialLogin', { platform: 'Google' })}
+                  activeOpacity={0.85}
+                >
+                  <Image 
+                    source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/512px-Google_%22G%22_logo.svg.png' }} 
+                    style={styles.socialImageLogo} 
+                  />
+                  <Text style={styles.googleBtnText}>Google</Text>
+                </TouchableOpacity>
+              </View>
 
               <View style={styles.footer}>
                 <Text style={styles.footerText}>Don't have an account? </Text>
@@ -179,24 +187,64 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     fontWeight: 'bold',
   },
-  socialBtn: {
+  socialRow: {
     flexDirection: 'row',
-    backgroundColor: 'rgba(255, 255, 255, 0.6)',
-    height: 50,
-    borderRadius: 25,
+    justifyContent: 'space-between',
+    gap: 15,
+    marginBottom: 20,
+  },
+  facebookBtn: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: '#FFFFFF',
+    height: 52,
+    borderRadius: 26,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 15,
+    paddingHorizontal: 16,
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.06)',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.06,
+    shadowRadius: 4,
+    elevation: 3,
   },
-  socialIcon: {
-    marginRight: 10,
+  facebookBtnText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#000000',
+    marginLeft: 10,
+    letterSpacing: 0.2,
   },
-  googleIconPlaceholder: {
-    marginRight: 10,
+  googleBtn: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: '#FFFFFF',
+    height: 52,
+    borderRadius: 26,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 16,
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.06)',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.06,
+    shadowRadius: 4,
+    elevation: 3,
   },
-  socialBtnText: {
-    fontSize: 16,
-    fontWeight: '500',
+  googleBtnText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#000000',
+    marginLeft: 10,
+    letterSpacing: 0.2,
+  },
+  socialImageLogo: {
+    width: 22,
+    height: 22,
+    resizeMode: 'contain',
   },
   footer: {
     flexDirection: 'column',

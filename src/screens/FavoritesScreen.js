@@ -13,7 +13,7 @@ export default function FavoritesScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
-      <Header title="Favorites" />
+      <Header title="Favorites" showBack={true} />
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <View style={styles.productGrid}>
           {favoriteProducts.map((item) => (

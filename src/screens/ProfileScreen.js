@@ -20,7 +20,7 @@ const ProfileScreen = () => {
   return (
     <View style={styles.container}>
       <Header title="Fitty" onMenuPress={() => navigation.navigate('Settings')} />
-      
+
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <View style={styles.titleSection}>
           <Text style={styles.title}>My Profile</Text>
@@ -29,16 +29,16 @@ const ProfileScreen = () => {
 
         <View style={styles.profileHeader}>
           <View style={styles.imageContainer}>
-            <Image 
-              source={{ uri: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80' }} 
+            <Image
+              source={{ uri: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80' }}
               style={styles.profileImage}
             />
             <TouchableOpacity style={styles.editButton}>
               <Ionicons name="pencil" size={16} color="#FFF" />
             </TouchableOpacity>
           </View>
-          <Text style={styles.name}>Sasha Meyer</Text>
-          <Text style={styles.email}>sasha.meyer@editorial.com</Text>
+          <Text style={styles.name}>Sachi perera</Text>
+          <Text style={styles.email}>sachiPerera@gmail.com</Text>
         </View>
 
         <View style={styles.menuSection}>

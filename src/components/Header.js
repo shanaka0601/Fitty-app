@@ -21,8 +21,8 @@ const Header = ({
           style={styles.iconContainer}
         >
           <Ionicons 
-            name={showBack ? "chevron-back-circle" : "menu-outline"} 
-            size={showBack ? 36 : 28} 
+            name={showBack ? "chevron-back" : "menu-outline"} 
+            size={showBack ? 30 : 28} 
             color="#000" 
           />
         </TouchableOpacity>

@@ -20,7 +20,7 @@ export default function CategoriesScreen({ navigation }) {
       <StatusBar style="dark" />
       <Header
         title="CATEGORIES"
-        onMenuPress={() => navigation.goBack()}
+        showBack={true}
       />
 
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
