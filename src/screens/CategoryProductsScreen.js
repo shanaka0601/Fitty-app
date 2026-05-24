@@ -39,6 +39,12 @@ const categoryData = {
     { id: 'd1', title: 'Red Long Dress', price: '$20.25', image: require('../assets/images/Red frock.png') },
     { id: 'd2', title: 'Blue Summer Dress', price: '$20.25', image: require('../assets/images/blue frock.png') },
     { id: 'd3', title: 'Green Modern Dress', price: '$18.25', image: require('../assets/images/dress girl.png') },
+    { id: 'd4', title: 'Elegant Evening Gown', price: '$18.00', image: require('../assets/images/Elegant Gown.png') },
+    { id: 'd5', title: 'Soft Glow White Frock', price: '$18.00', image: require('../assets/images/WHITYYY DRESS.png') },
+    { id: 'd6', title: 'Soft Glow Pink Frock', price: '$18.00', image: require('../assets/images/pink frock.png') },
+
+
+
 
   ],
 };

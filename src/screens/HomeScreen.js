@@ -18,6 +18,10 @@ const products = [
   { id: '10', title: 'Brown Short Skirt', price: '$18.00', image: require('../assets/images/Brown short.png') },
   { id: '11', title: 'Office Wear', price: '$16.00', image: require('../assets/images/Office Wear.png'), description: 'Elevate your everyday workwear with this elegant beige tailored office set, featuring a structured blazer and high-waisted trousers paired with a soft white inner top. Designed for comfort and sophistication, this timeless look brings effortless confidence to your professional wardrobe.' },
   { id: '12', title: 'Office Wear', price: '$16.00', image: require('../assets/images/OFFICE Wear copy.png'), description: 'Elevate your everyday workwear with this elegant beige tailored office set, featuring a structured blazer and high-waisted trousers paired with a soft white inner top. Designed for comfort and sophistication, this timeless look brings effortless confidence to your professional wardrobe.' },
+  { id: '13', title: 'Summer Floral Dress', price: '$28.00', oldPrice: '$40.00', image: require('../assets/images/Summer FloralDress.png'), discount: '30% OFF' },
+  { id: '14', title: 'Elegant Evening Gown', price: '$18.00', oldPrice: '$30.00', image: require('../assets/images/Elegant Gown.png'), discount: '40% OFF' },
+  { id: '15', title: 'Casual Crop Top', price: '$17.00', oldPrice: '$22.00', image: require('../assets/images/Casual Crop Top.png'), discount: '20% OFF' },
+  { id: '16', title: 'Boho Style Skirt', price: '$21.00', oldPrice: '$30.00', image: require('../assets/images/Boho Style Skirt.png'), discount: '30% OFF' },
 
 ];
 
