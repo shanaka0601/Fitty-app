@@ -6,16 +6,19 @@ import Header from '../components/Header';
 import ProductCard from '../components/ProductCard';
 
 const products = [
-  { id: '1', title: 'Pink Spotted Dress', price: '$35.25', image: require('../assets/images/pink spotted dress.png') },
-  { id: '2', title: 'Red Long Dress', price: '$25.25', image: require('../assets/images/Red frock.png') },
-  { id: '3', title: 'Light Blue Dress', price: '$30.25', image: require('../assets/images/blue frock detail.png') },
-  { id: '4', title: 'Red Crop Top', price: '$20.25', image: require('../assets/images/red croptop.png') },
-  { id: '5', title: 'Black Shirt', price: '$15.00', image: require('../assets/images/Black Shirt.png'), discount: '50% OFF' },
-  { id: '6', title: 'Essential Spring Skirt', price: '$20.00', image: require('../assets/images/Essential Spring Skirt with Casual shirt.png'), discount: '50% OFF' },
-  { id: '7', title: 'Pink Spotted Dress', price: '$25.00', image: require('../assets/images/pink spotted dress.png'), discount: '50% OFF' },
-  { id: '8', title: 'Red Croptop', price: '$20.00', image: require('../assets/images/red croptop.png'), discount: '50% OFF' },
-  { id: '9', title: 'Red Saree', price: '$35.00', image: require('../assets/images/Red saree.png'), discount: '50% OFF' },
-  { id: '10', title: 'Brown Short Skirt', price: '$28.00', image: require('../assets/images/Brown short.png') },
+  { id: '1', title: 'Pink Spotted Dress', price: '$25.25', image: require('../assets/images/pink spotted dress.png'), discount: '15% OFF' },
+  { id: '2', title: 'Red Long Dress', price: '$20.25', image: require('../assets/images/Red frock.png') },
+  { id: '3', title: 'Light Blue Dress', price: '$20.25', image: require('../assets/images/blue frock detail.png') },
+  { id: '4', title: 'Red Crop Top', price: '$30.00', image: require('../assets/images/red croptop.png'), discount: '30% OFF' },
+  { id: '5', title: 'Black Shirt', price: '$30.00', image: require('../assets/images/Black Shirt.png'), discount: '40% OFF' },
+  { id: '6', title: 'Essential Spring Skirt', price: '$30.00', image: require('../assets/images/Essential Spring Skirt with Casual shirt.png'), discount: '25% OFF' },
+  { id: '7', title: 'Blue Long sleeved T Shirt', price: '$25.00', image: require('../assets/images/Blue ts.png'), discount: '50% OFF' },
+  { id: '8', title: 'White Long sleeved T Shirt', price: '$25.00', image: require('../assets/images/white ts.png'), discount: '50% OFF' },
+  { id: '9', title: 'Red Saree', price: '$26.00', image: require('../assets/images/Red saree.png') },
+  { id: '10', title: 'Brown Short Skirt', price: '$18.00', image: require('../assets/images/Brown short.png') },
+  { id: '11', title: 'Office Wear', price: '$16.00', image: require('../assets/images/Office Wear.png'), description: 'Elevate your everyday workwear with this elegant beige tailored office set, featuring a structured blazer and high-waisted trousers paired with a soft white inner top. Designed for comfort and sophistication, this timeless look brings effortless confidence to your professional wardrobe.' },
+  { id: '12', title: 'Office Wear', price: '$16.00', image: require('../assets/images/OFFICE Wear copy.png'), description: 'Elevate your everyday workwear with this elegant beige tailored office set, featuring a structured blazer and high-waisted trousers paired with a soft white inner top. Designed for comfort and sophistication, this timeless look brings effortless confidence to your professional wardrobe.' },
+
 ];
 
 export default function HomeScreen({ navigation }) {
@@ -52,6 +55,7 @@ export default function HomeScreen({ navigation }) {
               title={item.title}
               price={item.price}
               image={item.image}
+              discount={item.discount}
               onPress={() => navigation.navigate('ProductDetails', { product: item })}
               onBuyNow={() => navigation.navigate('BuyNow', { product: item })}
             />

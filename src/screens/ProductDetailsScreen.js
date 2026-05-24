@@ -6,6 +6,15 @@ import Header from '../components/Header';
 
 const { width } = Dimensions.get('window');
 
+const calculateOriginalPrice = (priceStr, discountStr) => {
+  if (!priceStr || !discountStr) return '';
+  const priceVal = parseFloat(priceStr.replace(/[^0-9.]/g, ''));
+  const discountVal = parseFloat(discountStr.replace(/[^0-9.]/g, ''));
+  if (isNaN(priceVal) || isNaN(discountVal) || discountVal === 100) return '';
+  const originalVal = priceVal / (1 - discountVal / 100);
+  return `$${originalVal.toFixed(2)}`;
+};
+
 const ProductDetailsScreen = ({ route }) => {
   const { product } = route.params || { product: { title: 'Office Type Outfit', price: '$58.25', image: null } };
   const navigation = useNavigation();
@@ -44,7 +53,19 @@ const ProductDetailsScreen = ({ route }) => {
         />
 
         <View style={styles.detailsContainer}>
-          <Text style={styles.price}>{product.price}</Text>
+          {product.discount ? (
+            <View style={styles.priceContainer}>
+              <Text style={styles.price}>{product.price}</Text>
+              <Text style={styles.oldPrice}>
+                {product.oldPrice || product.oldprice || calculateOriginalPrice(product.price, product.discount)}
+              </Text>
+              <View style={styles.discountBadge}>
+                <Text style={styles.discountBadgeText}>{product.discount}</Text>
+              </View>
+            </View>
+          ) : (
+            <Text style={[styles.price, { marginBottom: 15 }]}>{product.price}</Text>
+          )}
           <Text style={styles.description}>
             {product.description || "A young woman wears an elegant blue maxi dress with soft puff sleeves and a flowing tiered skirt. The vibrant blue fabric creates a graceful, romantic look in warm natural light."}
           </Text>
@@ -115,7 +136,30 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: 'bold',
     color: '#000',
+  },
+  priceContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
     marginBottom: 15,
+    flexWrap: 'wrap',
+  },
+  oldPrice: {
+    fontSize: 20,
+    color: '#888',
+    textDecorationLine: 'line-through',
+    marginLeft: 15,
+  },
+  discountBadge: {
+    backgroundColor: '#FF3B30',
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 8,
+    marginLeft: 15,
+  },
+  discountBadgeText: {
+    color: '#FFF',
+    fontSize: 14,
+    fontWeight: 'bold',
   },
   description: {
     fontSize: 14,

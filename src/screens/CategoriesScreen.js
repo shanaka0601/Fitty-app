@@ -11,7 +11,7 @@ const categories = [
   { id: '3', title: 'Dresses', items: '70+ items', image: require('../assets/images/Red frock.png') },
   { id: '4', title: 'Shoes', items: '100+ items', image: require('../assets/images/shoes category.png') },
   { id: '5', title: 'Accessories', items: '30+ items', image: require('../assets/images/accessories category.png') },
-  { id: '6', title: 'Sarees', items: '70+ items', image: require('../assets/images/saree category.png') },
+  { id: '6', title: 'Sarees', items: '70+ items', image: require('../assets/images/Saree Category copy.png') },
 ];
 
 export default function CategoriesScreen({ navigation }) {

@@ -32,16 +32,35 @@ const SaleScreen = ({ navigation }) => {
     return `${hrs}:${mins}:${secs}`;
   };
 
+  const calculateDiscountedPrice = (oldPriceStr, discountStr) => {
+    if (!oldPriceStr || !discountStr) return null;
+    const oldPriceVal = parseFloat(oldPriceStr.replace(/[^0-9.]/g, ''));
+    const discountVal = parseFloat(discountStr.replace(/[^0-9.]/g, ''));
+    if (isNaN(oldPriceVal) || isNaN(discountVal)) return null;
+    const discountedVal = oldPriceVal * (1 - discountVal / 100);
+    return `$${discountedVal.toFixed(2)}`;
+  };
+
   const saleProducts = [
-    { id: '1', title: 'Summer Floral Dress', price: '$45.00', oldPrice: '$90.00', image: require('../assets/images/Summer FloralDress.png'), discount: '30% OFF' },
-    { id: '2', title: 'Elegant Evening Gown', price: '$75.00', oldPrice: '$150.00', image: require('../assets/images/Elegant Gown.png'), discount: '40% OFF' },
-    { id: '3', title: 'Casual Crop Top', price: '$20.00', oldPrice: '$40.00', image: require('../assets/images/Casual Crop Top.png'), discount: '20% OFF' },
-    { id: '4', title: 'Boho Style Skirt', price: '$35.00', oldPrice: '$70.00', image: require('../assets/images/Boho Style Skirt.png'), discount: '30% OFF' },
-    { id: '5', title: 'Black Shirt', price: '$45.00', oldPrice: '$90.00', image: require('../assets/images/Black Shirt.png'), discount: '40% OFF' },
-    { id: '6', title: 'Essential Spring Skirt', price: '$50.00', oldPrice: '$100.00', image: require('../assets/images/Essential Spring Skirt with Casual shirt.png'), discount: '25% OFF' },
-    { id: '7', title: 'Pink Spotted Dress', price: '$55.00', oldPrice: '$110.00', image: require('../assets/images/pink spotted dress.png'), discount: '15% OFF' },
-    { id: '8', title: 'Red Croptop', price: '$40.00', oldPrice: '$80.00', image: require('../assets/images/red croptop.png'), discount: '30% OFF' },
-  ];
+    { id: '1', title: 'Summer Floral Dress', price: '$45.00', oldPrice: '$40.00', image: require('../assets/images/Summer FloralDress.png'), discount: '30% OFF' },
+    { id: '2', title: 'Elegant Evening Gown', price: '$75.00', oldPrice: '$30.00', image: require('../assets/images/Elegant Gown.png'), discount: '40% OFF' },
+    { id: '3', title: 'Casual Crop Top', price: '$20.00', oldPrice: '$22.00', image: require('../assets/images/Casual Crop Top.png'), discount: '20% OFF' },
+    { id: '4', title: 'Boho Style Skirt', price: '$35.00', oldPrice: '$30.00', image: require('../assets/images/Boho Style Skirt.png'), discount: '30% OFF' },
+    { id: '5', title: 'Black Shirt', price: '$45.00', oldPrice: '$30.00', image: require('../assets/images/Black Shirt.png'), discount: '40% OFF' },
+    { id: '6', title: 'Essential Spring Skirt', price: '$50.00', oldPrice: '$30.00', image: require('../assets/images/Essential Spring Skirt with Casual shirt.png'), discount: '25% OFF' },
+    { id: '7', title: 'Pink Spotted Dress', price: '$25.50', oldPrice: '$29.71', image: require('../assets/images/pink spotted dress.png'), discount: '15% OFF' },
+    { id: '8', title: 'Red Croptop', price: '$21.00', oldPrice: '$30.00', image: require('../assets/images/red croptop.png'), discount: '30% OFF' },
+    { id: '9', title: 'White Long sleeved T Shirt', price: '$12.25', oldPrice: '$25.00', image: require('../assets/images/white ts.png'), discount: '50% OFF' },
+    { id: '10', title: 'Blue Long sleeved T Shirt', price: '$12.25', oldPrice: '$25.00', image: require('../assets/images/Blue ts.png'), discount: '50% OFF' },
+  ].map(item => {
+    const originalPrice = item.oldPrice || item.oldprice;
+    const computedPrice = calculateDiscountedPrice(originalPrice, item.discount);
+    return {
+      ...item,
+      oldPrice: originalPrice,
+      price: computedPrice || item.price,
+    };
+  });
 
   return (
     <View style={styles.container}>
@@ -73,6 +92,7 @@ const SaleScreen = ({ navigation }) => {
               key={item.id}
               title={item.title}
               price={item.price}
+              oldPrice={item.oldPrice}
               image={item.image}
               discount={item.discount}
               onPress={() => navigation.navigate('ProductDetails', { product: item })}

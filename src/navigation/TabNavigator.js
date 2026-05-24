@@ -49,6 +49,17 @@ function HomeStack() {
   );
 }
 
+function FavoritesStack() {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="FavoritesMain" component={FavoritesScreen} />
+      <Stack.Screen name="ProductDetails" component={ProductDetailsScreen} />
+      <Stack.Screen name="BuyNow" component={BuyNowScreen} />
+      <Stack.Screen name="Proceed" component={ProceedScreen} />
+    </Stack.Navigator>
+  );
+}
+
 const DummyScreen = () => <View style={{ flex: 1, backgroundColor: '#FFF2CC' }} />;
 
 function ProfileStack() {
@@ -108,7 +119,7 @@ export default function TabNavigator() {
       })}
     >
       <Tab.Screen name="Home" component={HomeStack} />
-      <Tab.Screen name="Favorites" component={FavoritesScreen} />
+      <Tab.Screen name="Favorites" component={FavoritesStack} />
       <Tab.Screen name="Alerts" component={AlertsScreen} />
       <Tab.Screen name="Profile" component={ProfileStack} />
     </Tab.Navigator>
