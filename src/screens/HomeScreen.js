@@ -22,6 +22,10 @@ const products = [
   { id: '14', title: 'Elegant Evening Gown', price: '$18.00', oldPrice: '$30.00', image: require('../assets/images/Elegant Gown.png'), discount: '40% OFF' },
   { id: '15', title: 'Casual Crop Top', price: '$17.00', oldPrice: '$22.00', image: require('../assets/images/Casual Crop Top.png'), discount: '20% OFF' },
   { id: '16', title: 'Boho Style Skirt', price: '$21.00', oldPrice: '$30.00', image: require('../assets/images/Boho Style Skirt.png'), discount: '30% OFF' },
+  { id: '17', title: 'Sunset Orange blouse', price: '$14.00', image: require('../assets/images/Orange shirt.png'), description: 'A bold oversized orange shirt with a soft lightweight fabric, full sleeves, and an open-collar design, perfect for a modern chic and elegant look.' },
+  { id: '18', title: 'Soft Glow White Frock', price: '$18.00', image: require('../assets/images/WHITYYY DRESS.png'), description: "A soft white frock with a simple elegant design, created for a modern and feminine fashion look. Its smooth flowing fabric and stylish fit bring a graceful and charming appearance." },
+  { id: '19', title: 'Soft Glow Pink Frock', price: '$18.00', image: require('../assets/images/pink frock.png'), description: "A soft pink frock with a simple elegant design, created for a modern and feminine fashion look. Its smooth flowing fabric and stylish fit bring a graceful and charming appearance." },
+  { id: '20', title: 'Green Glow Outfit', price: '$16.00', image: require('../assets/images/Green Glow Outfit.png') },
 
 ];
 

@@ -24,8 +24,10 @@ const categoryData = {
   ],
   'Sarees': [
     { id: 's1', title: 'Black Silk Saree', price: '$28.00', image: require('../assets/images/black silk saree.png'), description: 'Stunning black silk saree with intricate gold border work.' },
-    { id: 's2', title: 'Traditional Saree', price: '$25.00', image: require('../assets/images/Traditional Saree.png') },
-    { id: 's3', title: 'Eternal Blue Elegance saree', price: '$22.00', image: require('../assets/images/Blue saree.png') },
+    { id: 's2', title: 'Traditional Saree', price: '$25.00', image: require('../assets/images/Traditional Saree.png'), description: 'A traditional chalm saree with a graceful flowing design, blending elegant traditional beauty with a modern stylish look.' },
+    { id: 's3', title: 'Eternal Blue Elegance saree', price: '$22.00', image: require('../assets/images/Blue saree.png'), description: 'A soft navy blue saree with a graceful flowing design, blending elegant beauty with a modern stylish look.' },
+    { id: 's4', title: 'Yellow Elegance saree', price: '$22.00', image: require('../assets/images/Yellow saree.png'), description: 'A soft yellow saree with a graceful flowing design, blending elegant traditional beauty with a modern stylish look.' },
+
 
   ],
   'Shoes': [
