@@ -13,8 +13,9 @@ export default function LoginScreen({ navigation }) {
       Alert.alert("Error", "Please fill in all details correctly.");
       return;
     }
-    // Simple validation check
-    if (!email.includes('@')) {
+    // Robust email validation check
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) {
       Alert.alert("Error", "Please enter a valid email address.");
       return;
     }
@@ -75,7 +76,7 @@ export default function LoginScreen({ navigation }) {
                   activeOpacity={0.85}
                 >
                   <Image 
-                    source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/512px-Facebook_Logo_%282019%29.png' }} 
+                    source={{ uri: 'https://img.icons8.com/color/72/facebook-new.png' }} 
                     style={styles.socialImageLogo} 
                   />
                   <Text style={styles.facebookBtnText}>Facebook</Text>
@@ -87,7 +88,7 @@ export default function LoginScreen({ navigation }) {
                   activeOpacity={0.85}
                 >
                   <Image 
-                    source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/512px-Google_%22G%22_logo.svg.png' }} 
+                    source={{ uri: 'https://img.icons8.com/color/72/google-logo.png' }} 
                     style={styles.socialImageLogo} 
                   />
                   <Text style={styles.googleBtnText}>Google</Text>
@@ -160,18 +161,23 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   loginBtn: {
-    backgroundColor: 'rgba(255, 255, 255, 0.4)',
-    borderWidth: 1,
-    borderColor: '#FFF',
+    backgroundColor: '#000000',
     height: 55,
-    borderRadius: 30,
+    borderRadius: 27.5,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    elevation: 5,
   },
   loginBtnText: {
+    color: '#FFFFFF',
     fontSize: 18,
-    fontWeight: '500',
+    fontWeight: '600',
+    letterSpacing: 0.5,
   },
   dividerContainer: {
     flexDirection: 'row',
@@ -242,8 +248,8 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
   },
   socialImageLogo: {
-    width: 22,
-    height: 22,
+    width: 24,
+    height: 24,
     resizeMode: 'contain',
   },
   footer: {

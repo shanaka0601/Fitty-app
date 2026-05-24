@@ -16,6 +16,12 @@ export default function CreateAccountScreen({ navigation }) {
       Alert.alert('Error', 'Please fill in all the details to create an account.');
       return;
     }
+    // Robust email validation check
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) {
+      Alert.alert('Error', 'Please enter a valid email address.');
+      return;
+    }
     if (!agreed) {
       Alert.alert('Error', 'Please agree to the processing of personal data.');
       return;
@@ -163,16 +169,21 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   getStartedBtn: {
-    backgroundColor: 'rgba(255, 255, 255, 0.4)',
-    borderWidth: 1,
-    borderColor: '#FFF',
+    backgroundColor: '#000000',
     height: 55,
-    borderRadius: 30,
+    borderRadius: 27.5,
     justifyContent: 'center',
     alignItems: 'center',
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    elevation: 5,
   },
   getStartedBtnText: {
+    color: '#FFFFFF',
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: '600',
+    letterSpacing: 0.5,
   }
 });

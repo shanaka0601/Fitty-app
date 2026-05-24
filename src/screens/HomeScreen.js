@@ -6,16 +6,16 @@ import Header from '../components/Header';
 import ProductCard from '../components/ProductCard';
 
 const products = [
-  { id: '1', title: 'Pink Spotted Dress', price: '$65.25', image: require('../assets/images/pink spotted dress.png') },
-  { id: '2', title: 'Red Long Dress', price: '$65.25', image: require('../assets/images/Red frock.png') },
-  { id: '3', title: 'Light Blue Dress', price: '$50.25', image: require('../assets/images/blue frock detail.png') },
-  { id: '4', title: 'Red Crop Top', price: '$40.25', image: require('../assets/images/red croptop.png') },
-  { id: '5', title: 'Black Shirt', price: '$45.00', oldPrice: '$90.00', image: require('../assets/images/Black Shirt.png'), discount: '50% OFF' },
-  { id: '6', title: 'Essential Spring Skirt', price: '$50.00', oldPrice: '$100.00', image: require('../assets/images/Essential Spring Skirt with Casual shirt.png'), discount: '50% OFF' },
-  { id: '7', title: 'Pink Spotted Dress', price: '$55.00', oldPrice: '$110.00', image: require('../assets/images/pink spotted dress.png'), discount: '50% OFF' },
-  { id: '8', title: 'Red Croptop', price: '$40.00', oldPrice: '$80.00', image: require('../assets/images/red croptop.png'), discount: '50% OFF' },
-  { id: '9', title: 'Red Saree', price: '$45.00', oldPrice: '$90.00', image: require('../assets/images/Red saree.png'), discount: '50% OFF' },
-  { id: '10', title: 'Brown Short Skirt', price: '$45.00', oldPrice: '$90.00', image: require('../assets/images/Brown short.png') },
+  { id: '1', title: 'Pink Spotted Dress', price: '$35.25', image: require('../assets/images/pink spotted dress.png') },
+  { id: '2', title: 'Red Long Dress', price: '$25.25', image: require('../assets/images/Red frock.png') },
+  { id: '3', title: 'Light Blue Dress', price: '$30.25', image: require('../assets/images/blue frock detail.png') },
+  { id: '4', title: 'Red Crop Top', price: '$20.25', image: require('../assets/images/red croptop.png') },
+  { id: '5', title: 'Black Shirt', price: '$15.00', image: require('../assets/images/Black Shirt.png'), discount: '50% OFF' },
+  { id: '6', title: 'Essential Spring Skirt', price: '$20.00', image: require('../assets/images/Essential Spring Skirt with Casual shirt.png'), discount: '50% OFF' },
+  { id: '7', title: 'Pink Spotted Dress', price: '$25.00', image: require('../assets/images/pink spotted dress.png'), discount: '50% OFF' },
+  { id: '8', title: 'Red Croptop', price: '$20.00', image: require('../assets/images/red croptop.png'), discount: '50% OFF' },
+  { id: '9', title: 'Red Saree', price: '$35.00', image: require('../assets/images/Red saree.png'), discount: '50% OFF' },
+  { id: '10', title: 'Brown Short Skirt', price: '$28.00', image: require('../assets/images/Brown short.png') },
 ];
 
 export default function HomeScreen({ navigation }) {
@@ -34,14 +34,14 @@ export default function HomeScreen({ navigation }) {
             style={styles.bannerImage}
           />
           <View style={styles.bannerContent}>
-          <Text style={styles.bannerText}>GET YOUR SPECIAL SALE UP TO <Text style={styles.bannerHighlight}>50%</Text></Text>
-          <TouchableOpacity
-            style={styles.shopNowBtn}
-            onPress={() => navigation.navigate('Sale')}
-          >
-            <Text style={styles.shopNowText}>Shop Now</Text>
-          </TouchableOpacity>
-        </View>
+            <Text style={styles.bannerText}>GET YOUR SPECIAL SALE UP TO <Text style={styles.bannerHighlight}>50%</Text></Text>
+            <TouchableOpacity
+              style={styles.shopNowBtn}
+              onPress={() => navigation.navigate('Sale')}
+            >
+              <Text style={styles.shopNowText}>Shop Now</Text>
+            </TouchableOpacity>
+          </View>
         </View>
 
         {/* Product Grid */}

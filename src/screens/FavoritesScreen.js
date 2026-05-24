@@ -7,6 +7,17 @@ import ProductCard from '../components/ProductCard';
 const favoriteProducts = [
   { id: '1', title: 'Pink Spotted Dress', price: '$65.25', image: require('../assets/images/blue frock.png') },
   { id: '2', title: 'Red Long Dress', price: '$65.25', image: require('../assets/images/Red frock.png') },
+  { id: '3', title: 'Red Long Dress', price: '$65.25', image: require('../assets/images/Red frock.png') },
+  { id: '4', title: 'Red Long Dress', price: '$65.25', image: require('../assets/images/Red frock.png') },
+  { id: '5', title: 'Red Long Dress', price: '$65.25', image: require('../assets/images/Red frock.png') },
+  { id: '6', title: 'Red Long Dress', price: '$65.25', image: require('../assets/images/Red frock.png') },
+  { id: '7', title: 'Red Long Dress', price: '$65.25', image: require('../assets/images/Red frock.png') },
+  { id: '8', title: 'Red Long Dress', price: '$65.25', image: require('../assets/images/Red frock.png') },
+  { id: '9', title: 'Red Long Dress', price: '$65.25', image: require('../assets/images/Red frock.png') },
+  { id: '10', title: 'Red Long Dress', price: '$65.25', image: require('../assets/images/Red frock.png') },
+  { id: '11', title: 'Red Long Dress', price: '$65.25', image: require('../assets/images/Red frock.png') },
+  { id: '12', title: 'Red Long Dress', price: '$65.25', image: require('../assets/images/Red frock.png') },
+
 ];
 
 export default function FavoritesScreen({ navigation }) {
@@ -17,7 +28,7 @@ export default function FavoritesScreen({ navigation }) {
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <View style={styles.productGrid}>
           {favoriteProducts.map((item) => (
-            <ProductCard 
+            <ProductCard
               key={item.id}
               title={item.title}
               price={item.price}

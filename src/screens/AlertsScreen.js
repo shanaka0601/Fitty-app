@@ -13,7 +13,7 @@ const AlertsScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Header title="Alerts" />
+      <Header title="Alerts" showBack={true} />
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <View style={styles.headerSection}>
           <Text style={styles.title}>Recent Alerts</Text>

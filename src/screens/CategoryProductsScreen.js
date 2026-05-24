@@ -5,12 +5,14 @@ import ProductCard from '../components/ProductCard';
 
 const categoryData = {
   'Women': [
-    { id: 'w1', title: 'Black Long Sleeved Dress', price: '$40.25', image: require('../assets/images/Categories.png'), description: 'Elegant black midi dress with a flattering fitted bodice and flowy skirt, designed to enhance a graceful silhouette.' },
-    { id: 'w2', title: 'Pink Floral Dress', price: '$65.25', image: require('../assets/images/blue frock.png') },
-    { id: 'w3', title: 'Red Party Dress', price: '$65.25', image: require('../assets/images/Red frock.png') },
+    { id: 'w1', title: 'Black Long Sleeved Dress', price: '$20.25', image: require('../assets/images/Black Long sleeved dress.png'), description: 'Elegant black midi dress with a flattering fitted bodice and flowy skirt, designed to enhance a graceful silhouette.' },
+    { id: 'w2', title: 'Pink Floral Dress', price: '$15.25', image: require('../assets/images/Pink floral dress.png') },
+    { id: 'w3', title: 'Red Party Dress', price: '$25.25', image: require('../assets/images/Red frock.png') },
+    { id: 'w4', title: 'Red Party Dress', price: '$15.25', image: require('../assets/images/Red frock.png') },
+
   ],
   'Men': [
-    { id: 'm1', title: 'White long sleeved shirt', price: '$58.25', image: require('../assets/images/men category.png'), description: 'Classic white long sleeved shirt for a clean, sophisticated look.' },
+    { id: 'm1', title: 'White long sleeved shirt', price: '$58.25', image: require('../assets/images/White long sl s.png'), description: 'Classic white long sleeved shirt for a clean, sophisticated look.' },
     { id: 'm2', title: 'Black Casual Shirt', price: '$58.25', image: require('../assets/images/Black Shirt.png'), description: 'Versatile black shirt, perfect for casual or formal wear.' },
   ],
   'Sarees': [
@@ -27,6 +29,8 @@ const categoryData = {
   'Dresses': [
     { id: 'd1', title: 'Red Long Dress', price: '$65.25', image: require('../assets/images/Red frock.png') },
     { id: 'd2', title: 'Blue Summer Dress', price: '$50.25', image: require('../assets/images/blue frock.png') },
+    { id: 'd3', title: 'Green Modern Dress', price: '$50.25', image: require('../assets/images/dress girl.png') },
+
   ],
 };
 
