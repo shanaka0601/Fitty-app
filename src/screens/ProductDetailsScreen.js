@@ -99,7 +99,7 @@ const ProductDetailsScreen = ({ route }) => {
             </View>
           </View>
 
-          <TouchableOpacity style={styles.addToCartButton} onPress={() => {/* TODO: add to cart logic */}}>
+          <TouchableOpacity style={styles.addToCartButton} onPress={() => navigation.navigate('Cart', { product: { ...product, selectedSize } })}>
             <Text style={styles.addToCartText}>Add to Cart</Text>
           </TouchableOpacity>
 
