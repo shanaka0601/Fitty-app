@@ -54,8 +54,12 @@ function FavoritesStack() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="FavoritesMain" component={FavoritesScreen} />
       <Stack.Screen name="ProductDetails" component={ProductDetailsScreen} />
+      <Stack.Screen name="Cart" component={CartScreen} />
       <Stack.Screen name="BuyNow" component={BuyNowScreen} />
       <Stack.Screen name="Proceed" component={ProceedScreen} />
+      <Stack.Screen name="PaymentMethod" component={PaymentMethodScreen} />
+      <Stack.Screen name="AddCard" component={AddCardScreen} />
+      <Stack.Screen name="PaymentDetail" component={PaymentDetailScreen} />
     </Stack.Navigator>
   );
 }
