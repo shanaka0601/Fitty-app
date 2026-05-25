@@ -6,8 +6,8 @@ import Header from '../components/Header';
 
 export default function CartScreen({ navigation }) {
   const [items, setItems] = useState([
-    { id: '1', title: 'Light Blue Dress', price: 50.25, size: 'M', qty: 1, image: require('../assets/images/blue frock detail.png') },
-    { id: '2', title: 'Red Long Dress', price: 65.25, size: 'S', qty: 1, image: require('../assets/images/Red frock.png') },
+    { id: '1', title: 'Light Blue Dress', price: 20.25, size: 'M', qty: 1, image: require('../assets/images/blue frock detail.png') },
+    { id: '2', title: 'Red Long Dress', price: 25.25, size: 'S', qty: 1, image: require('../assets/images/Red frock.png') },
   ]);
 
   const handleIncrease = (id) => {
@@ -44,8 +44,8 @@ export default function CartScreen({ navigation }) {
           <View style={styles.emptyContainer}>
             <Ionicons name="bag-handle-outline" size={80} color="#CCC" style={{ marginBottom: 20 }} />
             <Text style={styles.emptyText}>Your cart is empty</Text>
-            <TouchableOpacity 
-              style={styles.shopBtn} 
+            <TouchableOpacity
+              style={styles.shopBtn}
               onPress={() => navigation.navigate('Main')}
             >
               <Text style={styles.shopBtnText}>Continue Shopping</Text>
@@ -88,7 +88,7 @@ export default function CartScreen({ navigation }) {
               </View>
             </View>
 
-            <TouchableOpacity 
+            <TouchableOpacity
               style={styles.checkoutBtn}
               onPress={() => navigation.navigate('PaymentMethod')}
             >

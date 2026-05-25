@@ -13,7 +13,7 @@ export default function ProceedScreen() {
       <Image source={typeof image === 'string' ? { uri: image } : image} style={styles.image} />
       <View style={styles.infoBox}>
         <Text style={styles.title}>{title ?? 'Product'}</Text>
-        <Text style={styles.price}>${price ?? '--'}</Text>
+        <Text style={styles.price}>{price ?? '--'}</Text>
         <Text style={styles.description}>{description}</Text>
         <Text style={styles.shipping}>Shipping Time: 3‑5 Business Days</Text>
         <TouchableOpacity style={styles.placeOrderBtn} onPress={() => {
