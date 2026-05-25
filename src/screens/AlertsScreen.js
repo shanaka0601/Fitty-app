@@ -9,6 +9,8 @@ const AlertsScreen = () => {
     { id: '2', title: 'Flash Sale Alert!', description: 'Get 50% off on all summer dresses for the next 4 hours.', time: '5h ago', icon: 'flash-outline', color: '#FF9800' },
     { id: '3', title: 'Payment Successful', description: 'Your payment for order #12344 has been processed.', time: '1d ago', icon: 'card-outline', color: '#2196F3' },
     { id: '4', title: 'New Arrival', description: 'Check out the new Office Type Outfit collection.', time: '2d ago', icon: 'shirt-outline', color: '#9C27B0' },
+    { id: '5', title: 'Ready to Ship!', description: 'Your order #12445 has been packed and now it is ready to ship.', time: '5h ago', icon: 'cube-outline', color: '#2b09c3ff' },
+
   ];
 
   return (

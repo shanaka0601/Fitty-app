@@ -10,19 +10,19 @@ export default function ShippingAddressScreen() {
     {
       id: '1',
       tag: 'Home',
-      name: 'Sasha Meyer',
-      street: '124 Park Avenue, Apt 4B',
-      city: 'New York, NY 10016',
-      phone: '+1 (212) 555-0199',
+      name: 'Sachini Perera',
+      street: 'Colombo,Horana Road ',
+      city: 'Piliyandala',
+      phone: '+94 72 555-0199',
       isDefault: true
     },
     {
       id: '2',
       tag: 'Office',
-      name: 'Sasha Meyer',
-      street: '500 Fifth Avenue, Floor 14',
-      city: 'New York, NY 10110',
-      phone: '+1 (212) 555-0240',
+      name: 'Sachini Perera',
+      street: 'Baththaramulla Fifth Avenue, Floor 6',
+      city: 'Colombo',
+      phone: '+94 75 565-0199',
       isDefault: false
     }
   ]);
@@ -70,27 +70,27 @@ export default function ShippingAddressScreen() {
         {!showAddForm ? (
           <>
             {addresses.map((address) => (
-              <TouchableOpacity 
-                key={address.id} 
+              <TouchableOpacity
+                key={address.id}
                 style={[
-                  styles.addressCard, 
+                  styles.addressCard,
                   selectedId === address.id && styles.selectedCard
                 ]}
                 onPress={() => setSelectedId(address.id)}
               >
                 <View style={styles.cardHeader}>
                   <View style={styles.tagBox}>
-                    <Ionicons 
-                      name={address.tag.toLowerCase() === 'home' ? 'home-outline' : 'briefcase-outline'} 
-                      size={16} 
-                      color="#000" 
+                    <Ionicons
+                      name={address.tag.toLowerCase() === 'home' ? 'home-outline' : 'briefcase-outline'}
+                      size={16}
+                      color="#000"
                     />
                     <Text style={styles.tagText}>{address.tag}</Text>
                   </View>
-                  <Ionicons 
-                    name={selectedId === address.id ? 'checkmark-circle' : 'ellipse-outline'} 
-                    size={24} 
-                    color={selectedId === address.id ? '#000' : '#CCC'} 
+                  <Ionicons
+                    name={selectedId === address.id ? 'checkmark-circle' : 'ellipse-outline'}
+                    size={24}
+                    color={selectedId === address.id ? '#000' : '#CCC'}
                   />
                 </View>
 
@@ -107,7 +107,7 @@ export default function ShippingAddressScreen() {
               </TouchableOpacity>
             ))}
 
-            <TouchableOpacity 
+            <TouchableOpacity
               style={styles.addBtn}
               onPress={() => setShowAddForm(true)}
             >
@@ -118,48 +118,48 @@ export default function ShippingAddressScreen() {
         ) : (
           <View style={styles.formContainer}>
             <Text style={styles.formTitle}>New Address Details</Text>
-            
-            <CustomInput 
-              label="Address Label (e.g. Home, Office)" 
-              placeholder="Home" 
-              value={newTag} 
-              onChangeText={setNewTag} 
+
+            <CustomInput
+              label="Address Label (e.g. Home, Office)"
+              placeholder="Home"
+              value={newTag}
+              onChangeText={setNewTag}
             />
-            <CustomInput 
-              label="Full Name" 
-              placeholder="John Doe" 
-              value={newName} 
-              onChangeText={setNewName} 
+            <CustomInput
+              label="Full Name"
+              placeholder="John Doe"
+              value={newName}
+              onChangeText={setNewName}
             />
-            <CustomInput 
-              label="Street & Apt #" 
-              placeholder="123 Maple St" 
-              value={newStreet} 
-              onChangeText={setNewStreet} 
+            <CustomInput
+              label="Street & Apt #"
+              placeholder="123 Maple St"
+              value={newStreet}
+              onChangeText={setNewStreet}
             />
-            <CustomInput 
-              label="City, State & Zip Code" 
-              placeholder="New York, NY 10001" 
-              value={newCity} 
-              onChangeText={setNewCity} 
+            <CustomInput
+              label="City, State & Zip Code"
+              placeholder="Colombo, NY 10001"
+              value={newCity}
+              onChangeText={setNewCity}
             />
-            <CustomInput 
-              label="Phone Number" 
-              placeholder="+1 (555) 000-0000" 
-              value={newPhone} 
-              onChangeText={setNewPhone} 
+            <CustomInput
+              label="Phone Number"
+              placeholder="+94 72 555-0189"
+              value={newPhone}
+              onChangeText={setNewPhone}
             />
 
             <View style={styles.buttonRow}>
-              <TouchableOpacity 
-                style={[styles.btn, styles.cancelBtn]} 
+              <TouchableOpacity
+                style={[styles.btn, styles.cancelBtn]}
                 onPress={() => setShowAddForm(false)}
               >
                 <Text style={styles.cancelBtnText}>Cancel</Text>
               </TouchableOpacity>
-              
-              <TouchableOpacity 
-                style={[styles.btn, styles.saveBtn]} 
+
+              <TouchableOpacity
+                style={[styles.btn, styles.saveBtn]}
                 onPress={handleAddAddress}
               >
                 <Text style={styles.saveBtnText}>Save Address</Text>
