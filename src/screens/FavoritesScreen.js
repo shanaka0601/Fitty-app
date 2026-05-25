@@ -5,17 +5,21 @@ import Header from '../components/Header';
 import ProductCard from '../components/ProductCard';
 
 const favoriteProducts = [
-  { id: '1', title: 'Pink Spotted Dress', price: '$25.25', image: require('../assets/images/pink spotted dress.png'), discount: '15% OFF' },
-  { id: '2', title: 'Red Long Dress', price: '$20.25', image: require('../assets/images/Red frock.png') },
-  { id: '3', title: 'Light Blue Dress', price: '$20.25', image: require('../assets/images/blue frock detail.png') },
-  { id: '4', title: 'Red Crop Top', price: '$21.00', image: require('../assets/images/red croptop.png'), discount: '30% OFF' },
-  { id: '5', title: 'Black Shirt', price: '$18.00', image: require('../assets/images/Black Shirt.png'), discount: '40% OFF' },
-  { id: '6', title: 'Essential Spring Skirt', price: '$22.50', image: require('../assets/images/Essential Spring Skirt with Casual shirt.png'), discount: '25% OFF' },
-  { id: '7', title: 'Blue Long sleeved T Shirt', price: '$12.50', image: require('../assets/images/Blue ts.png'), discount: '50% OFF' },
-  { id: '8', title: 'White Long sleeved T Shirt', price: '$12.50', image: require('../assets/images/white ts.png'), discount: '50% OFF' },
-  { id: '9', title: 'Red Saree', price: '$26.00', image: require('../assets/images/Red saree.png') },
-  { id: '10', title: 'Brown Short Skirt', price: '$18.00', image: require('../assets/images/Brown short.png') },
+  { id: '1', title: 'Pink Spotted Dress', price: '$25.25', image: require('../assets/images/pink spotted dress.png'), discount: '15% OFF', description: "A charming pink spotted dress designed with a playful yet elegant touch, perfect for casual outings and summer days " },
+  { id: '2', title: 'Red Long Dress', price: '$20.25', image: require('../assets/images/Red frock.png'), description: "A vibrant red long dress that brings a bold and graceful presence, perfect for making a confident fashion statement " },
+  { id: '3', title: 'Light Blue Dress', price: '$20.25', image: require('../assets/images/blue frock detail.png'), description: " A graceful light blue dress designed with delicate details, offering a fresh and elegant look perfect for daytime occasions." },
+  { id: '4', title: 'Red Crop Top', price: '$30.00', image: require('../assets/images/red croptop.png'), discount: '30% OFF', description: " A stylish red crop top that combines modern trends with a classic appeal, featuring a flattering fit and a vibrant hue perfect for making a bold fashion statement" },
+  { id: '5', title: 'Black Shirt', price: '$30.00', image: require('../assets/images/Black Shirt.png'), discount: '40% OFF', description: "A stylish long-sleeved black shirt crafted for a modern and versatile look, suitable for both casual and formal wear,Its sleek design and comfortable fit make it a timeless wardrobe essential for any occasion" },
+  { id: '6', title: 'Essential Spring Skirt', price: '$30.00', image: require('../assets/images/Essential Spring Skirt with Casual shirt.png'), discount: '25% OFF', description: "A timeless and versatile piece, this essential spring skirt is designed with a flattering silhouette and premium fabric, perfect for effortlessly elevating your everyday style" },
+  { id: '7', title: 'Blue Long sleeved T Shirt', price: '$25.00', image: require('../assets/images/Blue ts.png'), discount: '50% OFF', description: " A blue long-sleeved t-shirt designed for a modern and casual look, featuring a comfortable fit and a classic style suitable for everyday wear" },
+  { id: '8', title: 'White Long sleeved T Shirt', price: '$25.00', image: require('../assets/images/white ts.png'), discount: '50% OFF', description: " A white long-sleeved t-shirt designed for a modern and casual look, featuring a comfortable fit and a classic style suitable for everyday wear" },
+  { id: '9', title: 'Red Saree', price: '$26.00', image: require('../assets/images/Red saree.png'), description: " A red saree designed for a modern and elegant look, featuring a comfortable fit and a classic style suitable for everyday wear" },
+  { id: '10', title: 'Brown Short Skirt', price: '$18.00', image: require('../assets/images/Brown short.png'), description: " A brown short skirt designed for a modern and casual look, featuring a comfortable fit and a classic style suitable for everyday wear" },
   { id: '11', title: 'Office Wear', price: '$16.00', image: require('../assets/images/Office Wear.png'), description: 'Elevate your everyday workwear with this elegant beige tailored office set, featuring a structured blazer and high-waisted trousers paired with a soft white inner top. Designed for comfort and sophistication, this timeless look brings effortless confidence to your professional wardrobe.' },
+  { id: '12', title: 'Office Wear', price: '$16.00', image: require('../assets/images/OFFICE Wear copy.png'), description: 'Elevate your everyday workwear with this elegant beige tailored office set, featuring a structured blazer and high-waisted trousers paired with a soft white inner top. Designed for comfort and sophistication, this timeless look brings effortless confidence to your professional wardrobe.' },
+  { id: '13', title: 'Summer Floral Dress', price: '$28.00', oldPrice: '$40.00', image: require('../assets/images/Summer FloralDress.png'), discount: '30% OFF', description: "A timeless and versatile piece, this essential Summer Floral dress is designed with a flattering silhouette and premium fabric, perfect for effortlessly elevating your everyday style" },
+  { id: '14', title: 'Elegant Evening Gown', price: '$18.00', oldPrice: '$30.00', image: require('../assets/images/Elegant Gown.png'), discount: '40% OFF', description: "  This essential Elegant Gown is designed with a flattering silhouette and premium fabric, perfect for effortlessly elevating your everyday style" },
+  { id: '15', title: 'Casual Crop Top', price: '$17.00', oldPrice: '$22.00', image: require('../assets/images/Casual Crop Top.png'), discount: '20% OFF', description: " A Casual Crop Top designed with a flattering silhouette and premium fabric, perfect for effortlessly elevating your everyday style" },
 
 
 ];

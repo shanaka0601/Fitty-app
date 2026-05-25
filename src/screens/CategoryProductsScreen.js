@@ -19,8 +19,12 @@ const categoryData = {
 
   ],
   'Men': [
-    { id: 'm1', title: 'White long sleeved shirt', price: '$58.25', image: require('../assets/images/White long sl s.png'), description: 'Classic white long sleeved shirt for a clean, sophisticated look.' },
-    { id: 'm2', title: 'Black Casual Shirt', price: '$58.25', image: require('../assets/images/Black Shirt.png'), description: 'Versatile black shirt, perfect for casual or formal wear.' },
+    { id: 'm1', title: 'White long sleeved shirt', price: '$20.25', image: require('../assets/images/White long sl s.png'), description: 'Classic white long sleeved shirt for a clean, sophisticated look.' },
+    { id: 'm2', title: 'Blue TShirt', price: '$14.25', image: require('../assets/images/Blue Ts Men.png'), description: " A blue round neck t-shirt with a relaxed, modern fit, perfect for casual wear and everyday comfort" },
+    { id: 'm3', title: 'Black Casual Shirt', price: '$30.00', image: require('../assets/images/Black Shirt.png'), description: 'Versatile black shirt, perfect for casual or formal wear.' },
+    { id: 'm4', title: 'Dark Green Casual Shirt', price: '$20.00', image: require('../assets/images/Green shirt men.png'), description: 'A dark green casual shirt designed for a modern and casual look, featuring a comfortable fit and a classic style suitable for everyday wear' },
+    { id: 'm5', title: 'Pink Casual Shirt', price: '$20.00', image: require('../assets/images/Pink shirt.png'), description: 'A Pink color casual shirt designed for a modern and casual look, featuring a comfortable fit and a classic style suitable for everyday wear' },
+
   ],
   'Sarees': [
     { id: 's1', title: 'Black Silk Saree', price: '$28.00', image: require('../assets/images/black silk saree.png'), description: 'Stunning black silk saree with intricate gold border work.' },
@@ -35,7 +39,9 @@ const categoryData = {
   ],
   'Accessories': [
     { id: 'a1', title: 'Premium Leather Bag', price: '$25.00', image: require('../assets/images/accessories category.png'), description: 'High-quality leather handbag with gold-tone hardware.' },
-    { id: 'a2', title: 'Designer Watch', price: '$40.00', image: require('../assets/images/accessories category.png') },
+    { id: 'a2', title: 'Designer Watch', price: '$40.00', image: require('../assets/images/Watch.png'), description: 'A stylish and versatile accessory, this watch blends timeless design with modern functionality, perfect for any occasion' },
+    { id: 'a3', title: 'Breeze Earrings', price: '$10.00', image: require('../assets/images/Breeze Earrings.png'), description: "Delicate yet striking, these earrings are designed to catch the light with every turn of the head, adding a touch of elegance and sophistication to any outfit." },
+    { id: 'a4', title: 'Elegant Dangling Earrings', price: '$12.00', image: require('../assets/images/Earrings.png'), description: "A pair of elegant dangling earrings" },
   ],
   'Dresses': [
     { id: 'd1', title: 'Red Long Dress', price: '$20.25', image: require('../assets/images/Red frock.png') },
