@@ -8,6 +8,9 @@ import TabNavigator from './TabNavigator';
 import SocialLoginScreen from '../screens/SocialLoginScreen';
 import ComingSoonScreen from '../screens/ComingSoonScreen';
 import CartScreen from '../screens/CartScreen';
+import PaymentMethodScreen from '../screens/PaymentMethodScreen';
+import AddCardScreen from '../screens/AddCardScreen';
+import PaymentDetailScreen from '../screens/PaymentDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +24,9 @@ export default function AppNavigator() {
       <Stack.Screen name="SocialLogin" component={SocialLoginScreen} />
       <Stack.Screen name="ComingSoon" component={ComingSoonScreen} />
       <Stack.Screen name="Cart" component={CartScreen} />
+      <Stack.Screen name="PaymentMethod" component={PaymentMethodScreen} />
+      <Stack.Screen name="AddCard" component={AddCardScreen} />
+      <Stack.Screen name="PaymentDetail" component={PaymentDetailScreen} />
       <Stack.Screen name="Main" component={TabNavigator} />
     </Stack.Navigator>
   );
